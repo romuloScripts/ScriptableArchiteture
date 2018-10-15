@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace GameArchiteture.Events
 {
-    [CustomEditor(typeof(GameEvent))]
+    [CustomEditor(typeof(GameEvent)),CanEditMultipleObjects]
     public class EventEditor : Editor
     {
         public override void OnInspectorGUI()
@@ -13,9 +13,12 @@ namespace GameArchiteture.Events
 
             GUI.enabled = Application.isPlaying;
 
-            GameEvent e = target as GameEvent;
-            if (GUILayout.Button("Run"))
-                e.Raise();
+            foreach (var item in targets)
+            {
+                GameEvent e = item as GameEvent;
+                if (GUILayout.Button("Run "+ e.name))
+                    e.Raise();
+            }
         }
     }
 }
