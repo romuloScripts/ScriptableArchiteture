@@ -4,7 +4,7 @@ using UnityEngine;
 using GameArchiteture.Variables;
 
 namespace GameArchiteture.Events{
-	[CreateAssetMenu(fileName = "GameEventBranch", menuName = "Game Architerute/GameEventBranch", order = 0)]
+	[CreateAssetMenu(fileName = "GameEventBranch", menuName = "Game Architeture/GameEventBranch", order = 0)]
 	public class GameEventBranch : ScriptableObject {
 
 		public List<Option> options;

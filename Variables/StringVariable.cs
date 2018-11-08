@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 namespace GameArchiteture.Variables{
-    [CreateAssetMenu(fileName = "StringVariable", menuName = "Game Architerute/StringVariable", order = 0)]
+    [CreateAssetMenu(fileName = "StringVariable", menuName = "Game Architeture/StringVariable", order = 0)]
     public class StringVariable : ScriptableObject{
         [SerializeField]
         private string value = "";

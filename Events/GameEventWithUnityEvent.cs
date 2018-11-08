@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 namespace GameArchiteture.Events{
-	[CreateAssetMenu(fileName = "GameEvent", menuName = "Game Architerute/GameEventWithUnityEvent", order = 0)]
+	[CreateAssetMenu(fileName = "GameEvent", menuName = "Game Architeture/GameEventWithUnityEvent", order = 0)]
 	public class GameEventWithUnityEvent : GameEvent {
 		public UnityEvent unityEvent;
 

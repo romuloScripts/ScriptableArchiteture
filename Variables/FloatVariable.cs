@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 namespace GameArchiteture.Variables{
-    [CreateAssetMenu(fileName = "FloatVariable", menuName = "Game Architerute/FloatVariable", order = 0)]
+    [CreateAssetMenu(fileName = "FloatVariable", menuName = "Game Architeture/FloatVariable", order = 0)]
     public class FloatVariable : ScriptableObject{
 #if UNITY_EDITOR
         [Multiline]

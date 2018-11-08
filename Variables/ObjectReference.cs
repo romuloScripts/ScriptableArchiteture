@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace GameArchiteture.Variables{
-    [CreateAssetMenu(fileName = "ObjectReference", menuName = "Game Architerute/ObjectReference", order = 0)]
+    [CreateAssetMenu(fileName = "ObjectReference", menuName = "Game Architeture/ObjectReference", order = 0)]
     public class ObjectReference : ScriptableObject {
 
         [SerializeField]
