@@ -4,7 +4,7 @@ using UnityEngine.Events;
 namespace GameArchiteture.Events{
     public class GameEventListener : MonoBehaviour{
         
-        [Tooltip("Event to register with.")]
+        [Tooltip("Event to register with."), EditScriptable]
         public GameEvent Event;
 
         [Tooltip("Response to invoke when Event is raised.")]
