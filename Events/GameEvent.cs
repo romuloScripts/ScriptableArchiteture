@@ -5,20 +5,20 @@ namespace GameArchiteture.Events{
     [CreateAssetMenu(fileName = "Event", menuName = "Game Architeture/GameEvent", order = 0)]
     public class GameEvent : ScriptableObject{
         
-        private readonly List<GameEventListener> eventListeners = 
-            new List<GameEventListener>();
+        private readonly List<GameEventListenerBase> eventListeners = 
+            new List<GameEventListenerBase>();
 
         public virtual void Raise(){
             for(int i = eventListeners.Count -1; i >= 0; i--)
-                eventListeners[i].OnEventRaised();
+                eventListeners[i].OnEventRaised(this);
         }
 
-        public void RegisterListener(GameEventListener listener){
+        public void RegisterListener(GameEventListenerBase listener){
             if (!eventListeners.Contains(listener))
                 eventListeners.Add(listener);
         }
 
-        public void UnregisterListener(GameEventListener listener){
+        public void UnregisterListener(GameEventListenerBase listener){
             if (eventListeners.Contains(listener))
                 eventListeners.Remove(listener);
         }

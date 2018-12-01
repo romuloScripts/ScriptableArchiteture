@@ -2,9 +2,11 @@
 using UnityEngine.Events;
 
 namespace GameArchiteture.Events{
-    public class GameEventListener : MonoBehaviour{
+    public class GameEventListener : GameEventListenerBase
+    {
+        public bool unregisterOnDisable=true;
         
-        [Tooltip("Event to register with."), EditScriptable]
+        [Tooltip("Event to register with."),EditScriptable]
         public GameEvent Event;
 
         [Tooltip("Response to invoke when Event is raised.")]
@@ -15,10 +17,14 @@ namespace GameArchiteture.Events{
         }
 
         private void OnDisable(){
-            Event.UnregisterListener(this);
+            if (unregisterOnDisable)
+            {
+                Event.UnregisterListener(this);
+            }  
         }
 
-        public void OnEventRaised(){
+        public override void OnEventRaised(GameEvent gameEvent = null)
+        {
             Response.Invoke();
         }
     }
