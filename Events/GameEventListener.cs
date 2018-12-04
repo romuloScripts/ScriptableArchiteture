@@ -27,5 +27,18 @@ namespace GameArchiteture.Events{
         {
             Response.Invoke();
         }
+        
+        public void DisableAndUnregister()
+        {
+            enabled = false;
+            Event.UnregisterListener(this);
+        }
+        
+        public void EnableAndRegister()
+        {
+            enabled = true;
+            Event.RegisterListener(this);
+        }
+        
     }
 }
