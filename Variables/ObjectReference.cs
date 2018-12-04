@@ -16,5 +16,15 @@ namespace GameArchiteture.Variables{
                 objReference = value;
             }
         }
+
+        public bool IsNotNull()
+        {
+            return objReference != null;
+        }
+        
+        public void SetNull()
+        {
+            objReference = null;
+        }
     }
 }
