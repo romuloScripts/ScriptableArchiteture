@@ -1,10 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+
+public interface ICondition
+{
+    bool GetResult();
+}
 
 namespace GameArchiteture.Variables{
+    
     [CreateAssetMenu(fileName = "ObjectReference", menuName = "Game Architeture/ObjectReference", order = 0)]
-    public class ObjectReference : ScriptableObject {
+    public class ObjectReference : ScriptableObject, ICondition {
 
         [SerializeField]
         protected Object objReference;
@@ -17,7 +21,7 @@ namespace GameArchiteture.Variables{
             }
         }
 
-        public bool IsNotNull()
+        private bool NotNull()
         {
             return objReference != null;
         }
@@ -25,6 +29,11 @@ namespace GameArchiteture.Variables{
         public void SetNull()
         {
             objReference = null;
+        }
+
+        public bool GetResult()
+        {
+            return NotNull();
         }
     }
 }
