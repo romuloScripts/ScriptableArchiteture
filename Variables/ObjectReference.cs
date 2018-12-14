@@ -35,5 +35,10 @@ namespace GameArchiteture.Variables{
         {
             return NotNull();
         }
+
+        public void Instantiate()
+        {
+            Instantiate(objReference);
+        }
     }
 }
